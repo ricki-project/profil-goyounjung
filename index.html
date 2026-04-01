@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Profil Go Youn-Jung</title>
+    <title>Profil Lengkap | Go Youn-Jung</title>
     
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap" rel="stylesheet">
@@ -14,92 +14,104 @@
             --text-dark: #0f172a;
             --text-muted: #64748b;
             --border-line: #f1f5f9;
-            --actor-img: url('foto-ricki.jpg.jpg');
+            /* GANTI NAMA FILE FOTO KAMU DI SINI */
+            --actor-img: url('poto-samping.jpg');
         }
 
         * { margin: 0; padding: 0; box-sizing: border-box; }
 
         body { 
-            background: #ffffff; /* Background Putih Polos biar bersih */
+            background: #ffffff; 
             color: var(--text-dark); 
             font-family: 'Plus Jakarta Sans', sans-serif; 
             line-height: 1.6;
         }
 
-        /* CONTAINER FULL HALAMAN */
         .main-app {
             width: 100%;
-            max-width: 600px; /* Batas maksimal biar nggak kelebaran di PC */
+            max-width: 700px; 
             margin: 0 auto;
         }
 
-        /* GAMBAR DI ATAS (IKUT SCROLL KE ATAS) */
+        /* GAMBAR DI ATAS - IKUT SCROLL */
         .hero-image {
             width: 100%;
-            height: 450px; /* Tinggi gambar di HP */
+            height: 500px; 
             background: var(--actor-img) center/cover no-repeat;
             border-bottom-left-radius: 40px;
             border-bottom-right-radius: 40px;
         }
 
-        /* KONTEN BAWAH */
         .content-area {
-            padding: 30px 20px;
+            padding: 35px 25px;
         }
 
-        .header-title { margin-bottom: 25px; }
+        .header-title { margin-bottom: 30px; }
         .tag { color: var(--primary); font-weight: 800; letter-spacing: 2px; font-size: 10px; text-transform: uppercase; margin-bottom: 8px; display: block; }
-        h1 { font-size: 36px; font-weight: 800; letter-spacing: -1.5px; line-height: 1; margin-bottom: 8px; }
+        h1 { font-size: 42px; font-weight: 800; letter-spacing: -2px; line-height: 1; margin-bottom: 8px; }
 
-        /* SINOPSIS */
+        /* SINOPSIS PANJANG DENGAN BACA SELENGKAPNYA */
         .synopsis-box {
-            margin-bottom: 30px;
-            font-size: 14px;
-            color: #4b5563;
+            margin-bottom: 35px;
+            font-size: 15px;
+            color: #475569;
         }
         #read-more-check { display: none; }
         .synopsis-text {
             display: -webkit-box;
-            -webkit-line-clamp: 3;
+            -webkit-line-clamp: 4;
             -webkit-box-orient: vertical;
             overflow: hidden;
+            transition: all 0.5s ease;
         }
-        #read-more-check:checked ~ .synopsis-text { display: block; -webkit-line-clamp: unset; }
-        .read-btn { color: var(--primary); font-weight: 700; cursor: pointer; font-size: 12px; margin-top: 5px; display: block; }
+        #read-more-check:checked ~ .synopsis-text { 
+            display: block; 
+            -webkit-line-clamp: unset; 
+        }
+        .read-btn { color: var(--primary); font-weight: 800; cursor: pointer; font-size: 13px; margin-top: 10px; display: block; text-decoration: underline; }
+        #read-more-check:checked ~ .read-btn::after { content: " Tampilkan Sedikit"; }
+        #read-more-check:not(:checked) ~ .read-btn::after { content: " Baca Selengkapnya..."; }
 
-        /* BIODATA GRID - KHUSUS HP */
+        /* DATA PRIBADI GRID */
         .info-grid {
             display: grid; 
             grid-template-columns: 1fr 1fr; 
-            gap: 15px;
-            padding: 20px; 
+            gap: 20px;
+            padding: 25px; 
             background: #f8fafc;
-            border-radius: 20px; 
-            margin-bottom: 35px;
+            border-radius: 25px; 
+            margin-bottom: 45px;
+            border: 1px solid #f1f5f9;
         }
-        .info-item h5 { font-size: 9px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 2px; }
-        .info-item p { font-weight: 700; font-size: 14px; }
+        .info-item h5 { font-size: 10px; color: var(--text-muted); text-transform: uppercase; margin-bottom: 4px; font-weight: 700; }
+        .info-item p { font-weight: 700; font-size: 15px; }
 
-        /* LIST FILMOGRAFI */
-        .section-title { font-size: 20px; font-weight: 800; margin-bottom: 20px; padding-left: 10px; border-left: 4px solid var(--primary); }
+        /* LIST FILMOGRAFI LENGKAP DENGAN PEMISAH */
+        .section-title { font-size: 22px; font-weight: 800; margin-bottom: 25px; padding-left: 15px; border-left: 5px solid var(--primary); }
         
         .list-item {
             display: flex;
             align-items: center;
-            padding: 20px 0;
+            padding: 22px 5px;
             text-decoration: none;
             color: inherit;
-            border-bottom: 1.5px solid var(--border-line);
+            border-bottom: 2px solid var(--border-line); /* PEMISAH JELAS */
+            transition: 0.3s all ease;
         }
-        .list-item:hover { background: #fafafa; }
+        .list-item:hover { background: #fdf2f2; padding-left: 15px; border-bottom-color: var(--primary); }
 
-        .year { width: 55px; font-weight: 800; color: var(--primary); font-size: 13px; }
+        .year { width: 65px; font-weight: 800; color: var(--primary); font-size: 14px; }
         .meta { flex: 1; }
-        .meta h4 { font-size: 15px; font-weight: 700; margin-bottom: 2px; }
-        .meta p { font-size: 12px; color: var(--text-muted); }
-        .badge { font-size: 8px; padding: 4px 10px; border-radius: 6px; background: #fff1f2; color: #e11d48; font-weight: 800; text-transform: uppercase; border: 1px solid #ffe4e6; }
+        .meta h4 { font-size: 17px; font-weight: 700; margin-bottom: 3px; }
+        .meta p { font-size: 13px; color: var(--text-muted); }
+        .badge { font-size: 9px; padding: 5px 12px; border-radius: 8px; background: #fff; color: #e11d48; font-weight: 800; text-transform: uppercase; border: 1px solid #fee2e2; }
 
-        .footer { text-align: center; padding: 40px 0; font-size: 11px; color: #cbd5e1; }
+        .footer { text-align: center; padding: 50px 0; font-size: 12px; color: #94a3b8; letter-spacing: 1px; }
+
+        @media (max-width: 480px) {
+            h1 { font-size: 38px; }
+            .hero-image { height: 400px; }
+        }
     </style>
 </head>
 <body>
@@ -109,55 +121,95 @@
 
         <div class="content-area">
             <div class="header-title">
-                <span class="tag">Database Aktris</span>
+                <span class="tag">Database Aktris Korea</span>
                 <h1>Go Youn-Jung</h1>
-                <p style="color:var(--text-muted); font-size: 14px;">Aktris & Seni Kontemporer</p>
+                <p style="color:var(--text-muted); font-size: 16px;">고윤정 • Visual Queen & Artist</p>
             </div>
 
             <div class="synopsis-box">
                 <input type="checkbox" id="read-more-check">
                 <div class="synopsis-text">
-                    Go Youn-jung lahir di Seoul pada 22 April 1996. Ia merupakan lulusan Seni Kontemporer dari Seoul Woman's University. Bakat seninya yang kuat membuat ekspresi wajahnya sangat ikonik di depan kamera. Sebelum terjun ke dunia akting, ia adalah model papan atas yang wajahnya sering menghiasi majalah fashion ternama. Debutnya di He Is Psychometric (2019) langsung mencuri perhatian dan karirnya meroket lewat serial Sweet Home dan Alchemy of Souls.
+                    Go Youn-jung lahir di Seoul, Korea Selatan pada 22 April 1996. Ia merupakan anak pertama di keluarganya. Sejak kecil, ia memiliki minat yang sangat mendalam pada dunia seni rupa, yang akhirnya membawanya untuk menempuh pendidikan tinggi di Seoul Woman's University dengan mengambil jurusan Seni Kontemporer. <br><br>
+                    Perjalanannya di dunia hiburan dimulai saat ia menjadi model sampul majalah mahasiswa ternama. Wajahnya yang proporsional membuat banyak agensi iklan berebut untuk mengontraknya. Sebelum resmi berakting, wajahnya sudah sangat akrab di TV Korea melalui iklan-iklan brand besar seperti Nike, Giorgio Armani, hingga Ritz Crackers. <br><br>
+                    Debut resminya di dunia akting terjadi pada tahun 2019 lewat drama "He Is Psychometric". Namun, popularitas internasionalnya meledak saat ia memerankan Park Yu-ri di serial Netflix "Sweet Home". Sejak saat itu, ia terus dipercaya memegang peran utama di berbagai judul hit seperti Alchemy of Souls dan Moving, mengukuhkan posisinya sebagai salah satu aktris paling berpengaruh saat ini.
                 </div>
-                <label for="read-more-check" class="read-btn">Baca Selengkapnya...</label>
+                <label for="read-more-check" class="read-btn"></label>
             </div>
 
             <div class="info-grid">
-                <div class="info-item"><h5>Nama Asli</h5><p>고윤정</p></div>
-                <div class="info-item"><h5>Lahir</h5><p>22 Apr 1996</p></div>
+                <div class="info-item"><h5>Nama Asli</h5><p>고윤정 (Go Youn-Jung)</p></div>
+                <div class="info-item"><h5>Lahir</h5><p>22 April 1996</p></div>
+                <div class="info-item"><h5>Asal</h5><p>Seoul, Korea Selatan</p></div>
                 <div class="info-item"><h5>Tinggi</h5><p>167 cm</p></div>
-                <div class="info-item"><h5>Debut</h5><p>2019</p></div>
-                <div class="info-item" style="grid-column: span 2;"><h5>Pendidikan</h5><p>Seoul Woman's University</p></div>
+                <div class="info-item" style="grid-column: span 2;"><h5>Pendidikan</h5><p>Seoul Woman's University (Contemporary Art)</p></div>
+                <div class="info-item"><h5>Agensi</h5><p>MAA Entertainment</p></div>
+                <div class="info-item"><h5>Debut</h5><p>2019 (TVN)</p></div>
             </div>
 
-            <div class="section-title">Filmografi</div>
+            <div class="section-title">Filmografi Lengkap</div>
 
             <a href="https://www.google.com/search?q=Can+This+Love+Be+Translated+Go+Youn+Jung" class="list-item" target="_blank">
                 <div class="year">2024</div>
-                <div class="meta"><h4>Can This Love Be Translated?</h4><p>Peran: Cha Shin-hye</p></div>
+                <div class="meta"><h4>Can This Love Be Translated?</h4><p>Karakter: Cha Shin-hye</p></div>
+                <span class="badge">Utama</span>
+            </a>
+
+            <a href="https://www.google.com/search?q=Someday+Wise+Resident+Life+Go+Youn+Jung" class="list-item" target="_blank">
+                <div class="year">2024</div>
+                <div class="meta"><h4>Someday Wise Resident Life</h4><p>Karakter: Residen Tahun Pertama</p></div>
                 <span class="badge">Utama</span>
             </a>
 
             <a href="https://www.google.com/search?q=Moving+Kdrama+Go+Youn+Jung" class="list-item" target="_blank">
                 <div class="year">2023</div>
-                <div class="meta"><h4>Moving</h4><p>Peran: Jang Hui-soo</p></div>
+                <div class="meta"><h4>Moving (Disney+)</h4><p>Karakter: Jang Hui-soo</p></div>
                 <span class="badge">Utama</span>
+            </a>
+
+            <a href="https://www.google.com/search?q=Death%27s+Game+Go+Youn+Jung" class="list-item" target="_blank">
+                <div class="year">2023</div>
+                <div class="meta"><h4>Death's Game (TVING)</h4><p>Karakter: Lee Ji-su</p></div>
+                <span class="badge">Pendukung</span>
             </a>
 
             <a href="https://www.google.com/search?q=Alchemy+of+Souls+2+Go+Youn+Jung" class="list-item" target="_blank">
                 <div class="year">2022</div>
-                <div class="meta"><h4>Alchemy of Souls 2</h4><p>Peran: Nak-su</p></div>
+                <div class="meta"><h4>Alchemy of Souls 2</h4><p>Karakter: Nak-su / Jin Bu-yeon</p></div>
                 <span class="badge">Utama</span>
             </a>
 
-            <a href="https://www.google.com/search?q=Sweet+Home+Go+Youn+Jung" class="list-item" target="_blank">
+            <a href="https://www.google.com/search?q=Hunt+Movie+Go+Youn+Jung" class="list-item" target="_blank">
+                <div class="year">2022</div>
+                <div class="meta"><h4>Hunt (Film Layar Lebar)</h4><p>Karakter: Jo Yoo-jeong</p></div>
+                <span class="badge">Utama</span>
+            </a>
+
+            <a href="https://www.google.com/search?q=Law+School+Kdrama+Go+Youn+Jung" class="list-item" target="_blank">
+                <div class="year">2021</div>
+                <div class="meta"><h4>Law School</h4><p>Karakter: Jeon Ye-seul</p></div>
+                <span class="badge">Pendukung</span>
+            </a>
+
+            <a href="https://www.google.com/search?q=Sweet+Home+Netflix+Go+Youn+Jung" class="list-item" target="_blank">
                 <div class="year">2020</div>
-                <div class="meta"><h4>Sweet Home</h4><p>Peran: Park Yu-ri</p></div>
+                <div class="meta"><h4>Sweet Home (Netflix)</h4><p>Karakter: Park Yu-ri</p></div>
+                <span class="badge">Pendukung</span>
+            </a>
+
+            <a href="https://www.google.com/search?q=The+School+Nurse+Files+Go+Youn+Jung" class="list-item" target="_blank">
+                <div class="year">2020</div>
+                <div class="meta"><h4>The School Nurse Files</h4><p>Karakter: Choi Yoo-jin</p></div>
+                <span class="badge">Cameo</span>
+            </a>
+
+            <a href="https://www.google.com/search?q=He+Is+Psychometric+Go+Youn+Jung" class="list-item" target="_blank">
+                <div class="year">2019</div>
+                <div class="meta"><h4>He Is Psychometric</h4><p>Karakter: Kim So-hyun</p></div>
                 <span class="badge">Pendukung</span>
             </a>
 
             <div class="footer">
-                © 2026 Crafted by Ricki
+                Premium Biography Dashboard • Crafted by Ricki • 2026
             </div>
         </div>
     </div>
